@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ROS Log Viewer Web Application - Detailed Project Specification
 
-## Getting Started
+## Project Overview
+Develop a web-based ROS (Robot Operating System) Log Viewer and Analyzer application that allows users to upload, parse, and analyze robot system logs with advanced filtering and search capabilities.
 
-First, run the development server:
+## Core Objectives
+- Create a user-friendly interface for log file analysis
+- Implement robust log parsing and visualization
+- Provide intuitive filtering and search mechanisms
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technical Requirements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend
+- Framework: Next.js
+- Styling: Tailwind CSS
+- State Management: React Hooks
+- Responsive Design: Mobile and desktop compatible
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Log Parsing Features
+1. File Upload Functionality
+- Support .log and .txt file formats
+- Validate file type before processing
+- Handle large log files efficiently
+- Display upload errors gracefully
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Log Data Extraction
+Parse log entries with the following mandatory fields:
+- Unique Identifier
+- Timestamp
+- Severity Level (INFO, WARN, ERROR, DEBUG)
+- Node Name
+- Full Message Content
 
-## Learn More
+## Key User Interface Components
 
-To learn more about Next.js, take a look at the following resources:
+### Log Uploader
+- Drag and drop file upload
+- File type validation
+- Error handling for invalid files
+- Clear visual feedback during upload
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Log Viewer Table
+- Paginated log display
+- Sortable columns
+- Color-coded severity levels
+- Responsive table design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Filtering Capabilities
+1. Severity Level Filter
+- Dropdown to select specific severity levels
+- Option to show/hide log types
+- Multi-select severity filtering
 
-## Deploy on Vercel
+2. Search Functionality
+- Real-time search across log messages
+- Keyword highlighting
+- Case-insensitive search
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Advanced Filtering
+- Date range selection
+- Node name filtering
+- Custom filter combinations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Bonus Features
+- Export filtered logs to CSV/JSON
+- Advanced log statistics
+- Log message detail modal
+- Performance optimization for large log files
+
+## Technical Constraints
+- Use TypeScript for type safety
+- Implement clean, modular code structure
+- Optimize performance for log processing
+- Implement proper error boundaries
+
+## Performance Considerations
+- Lazy loading of log entries
+- Efficient filtering mechanisms
+- Minimize re-renders
+- Handle large log files (100,000+ entries)
+
+## Security Requirements
+- Sanitize file uploads
+- Prevent XSS in log message display
+- Limit file upload size
+- Validate file content
+
+## Deployment Preparation
+- Docker containerization
+- Environment configuration
+- CI/CD pipeline considerations
+
+## Deliverables
+1. Complete source code repository
+2. Comprehensive README.md
+3. Setup and installation instructions
+4. Example log files for testing
+
+## Evaluation Criteria
+- Code quality and readability
+- User interface design
+- Performance efficiency
+- Error handling
+- Extensibility of the solution
+
+## Technology Stack
+- Frontend: Next.js 13+
+- Language: TypeScript
+- Styling: Tailwind CSS
+- State Management: React Hooks
+- Parsing Library: Custom implementation or Papa Parse
+- Deployment: Vercel/Netlify recommended
+
+## Application Image
+![Thumbnail](./public/thumbnail.png)

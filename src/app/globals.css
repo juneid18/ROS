@@ -1,21 +1,12 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  --primary: #cdc6ae; /* Primary color */
+  --secondary: #38686a; /* Secondary color */
+  --accent: #187795; /* Accent color */
+  --background: #a3b4a2; /* Background color */
 }
